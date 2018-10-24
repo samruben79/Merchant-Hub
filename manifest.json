@@ -10,7 +10,7 @@
   },
   "content_scripts": [{
     "matches": ["https://merchanthub.fmtc.co/cp/program_directory"],
-    "js": ["content.js"]
+    "js": ["jquery-3.1.1.min.js","content.js"]
   }],
   "browser_action": {
       "default_title": "Test",

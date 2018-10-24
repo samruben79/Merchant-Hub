@@ -5,16 +5,18 @@ document.getElementById("test").addEventListener('click', () => {
         //You can play with your DOM here or check URL against your regex
         console.log('Tab script:');
         var links = [];
-        var tds = $('table').children('tbody').children('tr').children('td');
-        console.log("TD:",tds)
-        var aLink = tds.children('a');
-        console.log(aLink)
-        for (var i = 0; i < aLink.length; i++){
+        var tds = $('#program_directory_table').children('tbody').children('tr').children('td')
+        console.log(tds)
+        // var aLink = tds.children('a')
+        // console.log(aLink)
+        for (var i = 0; i < tds.length; i++){
+          var aLink = tds.children('a')
+          console.log(aLink);
           var tdLink = aLink.attr("href");
           links.push(tdLink)
         }
         console.log(links)
-        console.log(document.body);
+        // console.log(document.body);
         return document.body.innerHTML;
     }
 
@@ -23,7 +25,7 @@ document.getElementById("test").addEventListener('click', () => {
         code: '(' + modifyDOM + ')();' //argument here is a string but function.toString() returns function's code
     }, (results) => {
         //Here we have just the innerHTML and not DOM structure
-        console.log('Popup script:')
-        console.log(results[0]);
+        // console.log('Popup script:')
+        // console.log(results[0]);
     });
 });
