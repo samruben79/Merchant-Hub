@@ -4,6 +4,16 @@ document.getElementById("test").addEventListener('click', () => {
     function modifyDOM() {
         //You can play with your DOM here or check URL against your regex
         console.log('Tab script:');
+        var links = [];
+        var tds = $('table').children('tbody').children('tr').children('td');
+        console.log("TD:",tds)
+        var aLink = tds.children('a');
+        console.log(aLink)
+        for (var i = 0; i < aLink.length; i++){
+          var tdLink = aLink.attr("href");
+          links.push(tdLink)
+        }
+        console.log(links)
         console.log(document.body);
         return document.body.innerHTML;
     }
