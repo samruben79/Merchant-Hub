@@ -9,7 +9,8 @@ document.getElementById("test").addEventListener('click', () => {
         var links = [];
         var tds = $('#program_directory_table').find('a').each(function(){
           var link = $(this).attr('href')
-          links.push('https://merchanthub.fmtc.co'+link);
+          var name = $(this).text()
+          links.push({"Company":name ,"Link":'https://merchanthub.fmtc.co'+link});
 
 
         });
